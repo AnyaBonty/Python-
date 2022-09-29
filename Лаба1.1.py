@@ -19,6 +19,6 @@ else:
 if age in child:
     print("Вы ребёнок!")
 elif age in young:
-    print("Вы молодёж!")
+    print("Вы молодёжь!")
 else:
     print("Вы в зрелом возрасте!")
