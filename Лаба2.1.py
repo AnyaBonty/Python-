@@ -67,7 +67,11 @@ elif b==2:
             for u in range(n):
                 for p in range(m):
                     c[i][j] += a[u][p] * b[u][j]
-    print("Результат умножения матрицы А на матрицу В:", c)
+    print("Результат умножения матрицы А на матрицу В:")
+    for i in range(n):
+        print()
+        for j in range(g):
+            print(c[i][j],end=' ' )
 
 
 
