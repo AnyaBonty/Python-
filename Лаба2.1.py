@@ -1,76 +1,80 @@
-# Первая матрица
-print("Введите размерность матрицы A")
-n,m = int(input()),int(input())
-print(n,"x",m)
-A = []
-for i in range(0, n):
-    A.append([])
-for i in range(0, n):
-    for j in range(0, m):
-        print("Введите элемент матрицы А с индексом ", i + 1, j + 1, ":", end='')
-        A[i].append(int(input()))
-# Вторая матрица
-print("Введите размерность матрицы B")
-a,b = int(input()),int(input())
-print(a,"x",b)
-B = [ ]
-for i in range(0, a):
-    B.append([])
-for i in range(0, a):
-    for j in range(0, b):
-        print("Введите элемент матрицы B с индексом ", i + 1, j + 1, ":", end='')
-        B[i].append(int(input()))
-# Вывод матрицы А
-print('Матрица А:', end='')
-for i in range(n):
-    print()
-    for j in range(m):
-        print(A[i][j], end=' ')
-print(sep='\n')
-# Транспонированная матрица А
-AA = []
-for i in range(m):
-    AA.append([])
-    for j in range(n):
-        AA[i].append([A[j][i]])
-print('Транспонированная матрица А:', end='')
-for i in range(m):
-    print()
-    for j in range(n):
-        print(AA[i][j], end='')
-print(sep='\n')
-# Вывод матрицы В
-print('Матрица B:', end='')
-for i in range(a):
-    print()
-    for j in range(b):
-        print(B[i][j], end='')
-print(sep='\n')
-# Транспонированная матрица B
-BB = []
-for i in range(b):
-    BB.append([])
-    for j in range(a):
-        BB[i].append([B[j][i]])
-print('Транспонированная матрица B:', end='')
-for i in range(b):
-    print()
-    for j in range(a):
-        print(BB[i][j], end='')
-print(sep='\n')
-# Перемножение матриц
-if m == a:
-    C = []
+
+b=int(input("Введите одно из предложенных действий: \n1)Транспонирование матрицы (возможные размеры матриц: 1х2, 2х1, 1х3, 3х1,2х2, 3х3) \n2)Умножение матриц (возможные размеры матриц: 1х2, 2х1, 1х3, 3х1, 2х2, 3х3)\n3)Определение ранга матрицы (возможные размеры матриц: 2х2, 3х3))\n"))
+if b==1:
+    print("Введите размерность матрицы")
+    n, m = int(input("Строки:")), int(input("Столбцы:"))
+    print(n, "x", m)
+    a = []
     for i in range(n):
-        C.append([])
-        for j in range(b):
+        a.append([])
+        for j in range(m):
+            print("Введите элемент матрицы с индексом ", i + 1, j + 1, ":", end='')
+            k = int(input())
+            a[i].append(k)
+    t=[]
+    for i in range(n):
+        print()
+        for j in range(m):
+            print(a[i][j],end=' ')
+    print()
+    for i in range(m):
+        t.append([])
+        for j in range(n):
+            t[i].append(a[j][i])
+    for i in range(m):
+        print()
+        for j in range(n):
+            print(t[i][j],end=' ')
+
+elif b==2:
+    print("Введите размерность матрицы A")
+    n, m = int(input("Строки:")), int(input("Столбцы:"))
+    print(n, "x", m)
+    a = []
+    for i in range(n):
+        a.append([])
+        for j in range(m):
+            print("Введите элемент матрицы A с индексом ", i + 1, j + 1, ":", end='')
+            k = int(input())
+            a[i].append(k)
+    for i in range(n):
+        print()
+        for j in range(m):
+            print(a[i][j], end=' ')
+    print()
+    print("Введите размерность матрицы B:",m, "x",end=' ')
+    g = int(input("Столбцы:"))
+    b = []
+    for i in range(m):
+        b.append([])
+        for j in range(g):
+            print("Введите элемент матрицы B с индексом ", i + 1, j + 1, ":", end='')
+            k = int(input())
+            b[i].append(k)
+    for i in range(m):
+        print()
+        for j in range(g):
+            print(b[i][j], end=' ')
+    c = []
+    for i in range(n):
+        for j in range(g):
             for a in range(n):
-                C[i][j] += A[i][a] * B[a][j]
-print("Результат умножения матрицы А на матрицу В:",C)
-# Определитель
-if b == 2 and n == 2:
-    o = C[0][0]*C[1][1]-C[0][1]*C[1][0]
-    print('Определитель матрицы С равен ', o)
-elif b == 3 and n == 3:
-    o = (C[0][0]*C[1][1]*C[2][2] + (C[0][1]*C[1][2]*C[2][0]) + (C[1][0]*C[2][1]*C[0][2])) - C[0][2]*C[1][1]*C[2][0] - C[0][1]*C[1][0]*C[2][2] - C[1][2]*C[2][1]*C[0][0]
-    print('Определитель матрицы С равен ', o)
+                c[i][j] += a[i][a] * b[a][j]
+    print("Результат умножения матрицы А на матрицу В:", c)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
