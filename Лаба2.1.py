@@ -1,4 +1,5 @@
 
+
 b=int(input("Введите одно из предложенных действий: \n1)Транспонирование матрицы (возможные размеры матриц: 1х2, 2х1, 1х3, 3х1,2х2, 3х3) \n2)Умножение матриц (возможные размеры матриц: 1х2, 2х1, 1х3, 3х1, 2х2, 3х3)\n3)Определение ранга матрицы (возможные размеры матриц: 2х2, 3х3))\n"))
 if b==1:
     print("Введите размерность матрицы")
@@ -43,7 +44,7 @@ elif b==2:
             print(a[i][j], end=' ')
     print()
     print("Введите размерность матрицы B:",m, "x",end=' ')
-    g = int(input("Столбцы:"))
+    g = int(input())
     b = []
     for i in range(m):
         b.append([])
@@ -55,13 +56,18 @@ elif b==2:
         print()
         for j in range(g):
             print(b[i][j], end=' ')
+    print()
     c = []
     for i in range(n):
+        c.append([])
         for j in range(g):
-            for a in range(n):
-                c[i][j] += a[i][a] * b[a][j]
+            c[i].append(0)
+    for i in range(n):
+        for j in range(g):
+            for u in range(n):
+                for p in range(m):
+                    c[i][j] += a[u][p] * b[u][j]
     print("Результат умножения матрицы А на матрицу В:", c)
-
 
 
 
