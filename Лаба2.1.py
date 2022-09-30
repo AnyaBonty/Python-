@@ -67,11 +67,35 @@ elif b==2:
             for u in range(n):
                 for p in range(m):
                     c[i][j] += a[u][p] * b[u][j]
+
     print("Результат умножения матрицы А на матрицу В:")
     for i in range(n):
         print()
         for j in range(g):
-            print(c[i][j],end=' ' )
+            print(c[i][j],end=' ')
+elif b==3:
+    print("Введите размерность матрицы")
+    n, m = int(input("Строки:")), int(input("Столбцы:"))
+    print(n, "x", m)
+    a = []
+    for i in range(n):
+        a.append([])
+        for j in range(m):
+            print("Введите элемент матрицы с индексом ", i + 1, j + 1, ":", end='')
+            k = int(input())
+            a[i].append(k)
+    q=0
+    for i in range(n):
+        print()
+        y=0
+        for j in range(m):
+            print(a[i][j], end=' ')
+            if a[i][j]==0:
+                y=y+1
+        if y!=m:
+            q=q+1
+    print()
+    print('Ранг равен:',q)
 
 
 
