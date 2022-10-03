@@ -27,7 +27,14 @@ def f(a,i,j):
     g=(((-1)**(i+2+j)))*(p[0][0]*p[1][1]-(p[0][1]*p[1][0]))
     return g
 for i in range(3):
-    print()
     for j in range(3):
         l[i][j] = f(a, i, j)*(1/h)
-        print(l[i][j],end=' ')
+t=[]
+for i in range(3):
+    t.append([])
+    for j in range(3):
+        t[i].append(l[j][i])
+for i in range(3):
+    print()
+    for j in range(3):
+        print(t[i][j],end=" ")
