@@ -1,0 +1,29 @@
+n=int(input("Введите количество элементов:"))
+a=[]
+for i in range(n):
+    print("Введите элементы")
+    a.append(int(input()))
+print("Список:",a)
+a[0]=a[1]
+print("Результат алгоритма сложности O(1) =",a)
+n=len(a)
+a.sort()
+w=int(input("Введите элемент, который нужно найти:"))
+l,r=-1,n
+while r-l>1:
+    t=(l+r)//2
+    if a[t]< w:
+        l=t
+    else:
+        r=t
+print("Результат алгоритма O(log n)=",r)
+for i in range(n):
+    for j in range(n):
+        a[i]+=a[j]
+print("Результат алгоритма сложности O(n^2)=",a)
+def f(n):
+    if n==1:
+        return 1
+    else:
+        return f(n-1)+1
+print("Результат алгоритма O(2^n)=",f(n))
